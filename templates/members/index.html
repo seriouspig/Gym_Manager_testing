@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<h1>Members</h1> 
+
+<table>
+    <tr>
+        <th>Name</th>
+    
+    {% for member in members %}
+    
+        <p>{{member.first_name}} - {{member.second_name}}</p>
+    
+    {% endfor %} 
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+import pdb 
+from models.member import Member 
+from models.activity import Activity
+from models.event import Event
+
+import repositories.member_repository as member_repository
+import repositories.activity_repository as activity_repository
+import repositories.event_repository as event_repository
+
+
+
+
+member1 = Member(
+    "John",
+    "Wick",
+    "30 march 1978",
+    "42",
+    "johnwick.jpg",
+    "Basic"
+)
+member_repository.save(member1)
+
+member2 = Member(
+    "Arnold",
+    "Schwarzeneger",
+    "30 march 1945",
+    "76",
+    "arnoldschwarzeneger.jpg",
+    "Premium"
+)
+member_repository.save(member2)
+
+
+
+
+pdb.set_trace()

@@ -1,6 +1,6 @@
 class Member:
     
-    def __init__(self, first_name, second_name, date_of_birth, age, photo, platinum = False)
+    def __init__(self, first_name, second_name, date_of_birth, age, photo, platinum, id=None):
 
         self.first_name = first_name
         self.second_name = second_name
@@ -8,5 +8,5 @@ class Member:
         self.age = age
         self.photo = photo
         self.platinum = platinum
-
+        self.id = id
 
