@@ -20,7 +20,7 @@ def create_member():
     second_name = request.form["second_name"]
     date_of_birth = request.form["date_of_birth"]
     age = request.form["age"]
-    photo = request.form["photo"]
+    photo = request.files["photo"].filename
     platinum = request.form["platinum"]
 
     member = Member(first_name, 
@@ -30,5 +30,7 @@ def create_member():
                     photo, 
                     platinum)
     member_repository.save(member)
+
+    
     return redirect('/members')
 
