@@ -7,9 +7,6 @@ import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 import repositories.event_repository as event_repository
 
-
-
-
 member1 = Member(
     "John",
     "Wick",
@@ -30,7 +27,18 @@ member2 = Member(
 )
 member_repository.save(member2)
 
+activity1 = Activity(
+    "Spinning",
+    "john_wick.jpg",
+    "Baldi"
+)
+activity_repository.save(activity1)
 
-
+activity2 = Activity(
+    "Weights",
+    "arnold_swartzeneger.jpg",
+    "Mario"
+)
+activity_repository.save(activity2)
 
 pdb.set_trace()

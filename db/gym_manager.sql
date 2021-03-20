@@ -15,6 +15,7 @@ CREATE TABLE members (
 CREATE TABLE activities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    photo VARCHAR(255),
     trainer VARCHAR(255)
 );
 
