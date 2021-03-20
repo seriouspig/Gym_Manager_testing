@@ -1,1 +1,26 @@
-<p>Hello</p>
+{% extends "base.html" %} 
+
+{% block content %} 
+<h1>New Activity Form</h1>
+<form action="/activities" method="POST" enctype="multipart/form-data">
+
+<!-- lagel for name -->
+<label for="name">Name:</label>
+<!-- input for name -->
+<input type="text" id="name" name="name" placeholder="Name">
+
+<!-- label for photo -->
+<label for="photo">Photo:</label>
+<!-- input for photo -->
+<input type="file" id="photo" name="photo" >
+
+<!-- label for trainer -->
+<label for="trainer">Trainer:</label>
+<!-- input for trainer -->
+<input type="text" id="trainer" name="trainer" placeholder="Trainer">
+
+<!-- input to submit form -->
+<input type="submit" value="Add Activity">
+</form>
+
+{% endblock %}
