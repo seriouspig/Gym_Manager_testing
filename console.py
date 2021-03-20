@@ -15,7 +15,7 @@ member1 = Member(
     "Wick",
     "30 march 1978",
     "42",
-    "johnwick.jpg",
+    "john_wick.jpg",
     "Basic"
 )
 member_repository.save(member1)
@@ -24,8 +24,8 @@ member2 = Member(
     "Arnold",
     "Schwarzeneger",
     "30 march 1945",
-    "76",
-    "arnoldschwarzeneger.jpg",
+    "75",
+    "arnold_swartzeneger.jpg",
     "Premium"
 )
 member_repository.save(member2)
