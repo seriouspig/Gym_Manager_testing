@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{activity.name}} </h1>
+
+
+
+<h3>Attended by:</h3>
+<ul>
+    {% for member in members %}
+    <li>{{ member.first_name }} - {{member.second_name}}</li>
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}

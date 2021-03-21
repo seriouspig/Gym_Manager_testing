@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Events</h1>
+
+
+
+
+  {% for event in events %}
+  
+  <p>{{event.member.first_name}} - {{event.member.id}} </p>
+  
+  <p>{{event.activity.name}}</p>
+  
+  <p>{{event.activity.trainer}}</p>
+
+  <p>{{event.day}}</p>
+  <p>{{event.time}}</p>
+  <p>{{event.room}}</p>
+  <p>{{event.capacity}}</p>
+  
+  
+  {% endfor %}
+
+
+
+{% endblock %}

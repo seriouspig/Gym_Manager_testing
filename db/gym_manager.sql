@@ -26,6 +26,6 @@ CREATE TABLE events (
     day VARCHAR(255),
     time VARCHAR(255),
     room VARCHAR(255),
-    capacity INT
+    capacity VARCHAR(255)
 );
 

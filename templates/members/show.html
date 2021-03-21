@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{member.name}} </h1>
+
+<h3>Activities:</h3>
+<ul>
+{% for activity in activities %}
+    <li>
+        {{activity.name}} - {{activity.trainer}}
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

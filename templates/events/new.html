@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add an Event</h1>
+
+<form action="/events" method="post">
+  <label for="member">Select a member:</label>
+    <select name="member_id" id="member">
+      {% for member in members %}
+      <option value="{{ member.id }}">{{ member.first_name }}</option>
+      {% endfor %}
+    </select>
+  
+  <label for="activity">Select an activity:</label>
+    <select name="activity_id" id="activity">
+      {% for activity in activities %}
+      <option value="{{ activity.id }}">{{ activity.name }}</option>
+      {% endfor %}
+    </select>
+  
+<!-- label for age -->
+<label for="day">Day:</label>
+<!-- input for age -->
+<input type="text" id="day" name="day" placeholder="Day">
+
+<!-- label for age -->
+<label for="time">Time:</label>
+<!-- input for age -->
+<input type="text" id="time" name="time" placeholder="Time">
+
+<!-- label for age -->
+<label for="room">Room:</label>
+<!-- input for age -->
+<input type="text" id="room" name="room" placeholder="Room">
+
+<!-- label for age -->
+<label for="capacity">Capacity:</label>
+<!-- input for age -->
+<input type="text" id="capacity" name="capacity" placeholder="Capacity">
+
+
+  <input class="btn btn--action" type='submit' value="Event">
+</form>
+
+{% endblock %}

@@ -30,3 +30,46 @@ def select_all():
         )
         activities.append(activity)
     return activities
+
+def select(id):
+    activity = None 
+    sql = "SELECT * FROM activities WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        activity = Activity(
+            result['name'],
+            result['photo'],
+            result['trainer'],
+            result['id']
+        )
+    return activity
+
+def delete_all():
+    sql = "DELETE FROM activities"
+    run_sql(sql)
+
+def members(activity):
+    values = [activity.id]
+    sql = """
+        SELECT members.* FROM members
+        INNER JOIN events
+        ON members.id = events.member_id
+        WHERE activity_id = %s
+        """
+    results = run_sql(sql, values)
+
+    members = []
+    for row in results:
+        member = Member(
+            row['first_name'],
+            row['second_name'],
+            row['date_of_birth'],
+            row['age'],
+            row['photo'],
+            row['platinum'],
+            row['id']
+            )
+        members.append(member)
+    return members

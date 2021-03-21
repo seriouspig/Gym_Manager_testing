@@ -26,3 +26,9 @@ def create_activity():
     activity_repository.save(activity)
 
     return redirect('/activities')
+
+@activities_blueprint.route("/activities/<id>")
+def show(id):
+    found_activity = activity_repository.select(id)
+    found_members = activity_repository.members(found_activity)
+    return render_template("activities/show.html", activity=found_activity, members=found_members)
