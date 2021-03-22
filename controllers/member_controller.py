@@ -50,11 +50,12 @@ def update_member(id):
     second_name = request.form["second_name"]
     date_of_birth = request.form["date_of_birth"]
     age = request.form["age"]
-    if request.files["photo"] == None :
+    photo = request.files["photo"].filename
+
+    if photo == '' :
         member = member_repository.select(id)
         photo = member.photo
-    else:
-        photo = request.files["photo"].filename
+
     
     platinum = request.form["platinum"]
 
