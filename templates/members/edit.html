@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+<h1>Edit Member Details</h1>
+<form action="/members/{{member.id}}" method="POST" enctype="multipart/form-data">
+
+<!-- lagel for first_name -->
+<label for="first_name">First Name:</label>
+<!-- input for first_name -->
+<input type="text" id="first_name" name="first_name" value="{{member.first_name}}">
+
+<!-- label for second_name -->
+<label for="second_name">Second Name:</label>
+<!-- input for second name -->
+<input type="text" id="second_name" name="second_name" value="{{member.second_name}}">
+
+<!-- label for date of birth -->
+<label for="date_of_birth">Date of Birth:</label>
+<!-- input for date of birth -->
+<input type="text" id="date_of_birth" name="date_of_birth" value="{{member.date_of_birth}}">
+
+<!-- label for age -->
+<label for="age">Age:</label>
+<!-- input for age -->
+<input type="text" id="age" name="age" value="{{member.age}}">
+
+<!-- label for photo -->
+<label for="photo">Photo:</label>
+<!-- input for photo -->
+<input type="file" id="photo" name="photo" >
+<p><img src="/static/images/{{member.photo}}" alt="member_photo"></p>
+
+
+<!-- label for platinum -->
+<label for="platinum">Platinum:</label>
+<!-- input for platinum -->
+<input type="text" id="platinum" name="platinum" value="{{member.platinum}}">
+
+<!-- input to submit form -->
+<input type="submit" value="Update Member">
+</form>
+<a href="/members">Cancel</a>
+
+{% endblock %}

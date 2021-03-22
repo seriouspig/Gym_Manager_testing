@@ -36,14 +36,14 @@ member_repository.save(member2)
 
 activity1 = Activity(
     "Spinning",
-    "john_wick.jpg",
+    "spinning.jpg",
     "Baldi"
 )
 activity_repository.save(activity1)
 
 activity2 = Activity(
     "Weights",
-    "arnold_swartzeneger.jpg",
+    "weights.jpg",
     "Mario"
 )
 activity_repository.save(activity2)

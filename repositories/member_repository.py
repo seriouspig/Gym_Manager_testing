@@ -80,3 +80,23 @@ def activities(member):
         )
         activities.append(activity)
     return activities
+
+def update(member):
+    sql = """UPDATE members SET 
+            first_name = %s,
+            second_name = %s,
+            date_of_birth = %s,
+            age = %s,
+            photo = %s,
+            platinum = %s
+            WHERE id = %s"""
+    values = [
+        member.first_name,
+        member.second_name,
+        member.date_of_birth,
+        member.age,
+        member.photo,
+        member.platinum,
+        member.id
+        ]
+    run_sql(sql, values)

@@ -32,3 +32,21 @@ def show(id):
     found_activity = activity_repository.select(id)
     found_members = activity_repository.members(found_activity)
     return render_template("activities/show.html", activity=found_activity, members=found_members)
+
+@activities_blueprint.route("/activities/<id>/edit")
+def edit_activity(id):
+    activity = activity_repository.select(id)
+    return render_template("/activities/edit.html", activity = activity)
+
+@activities_blueprint.route("/activities/<id>", methods=["POST"])
+def update_activity(id):
+    name = request.form["name"]
+    photo = request.files["photo"].filename
+    trainer = request.form["trainer"]
+
+    activity = Activity(name, 
+                    photo, 
+                    trainer, 
+                    id)
+    activity_repository.update(activity)
+    return redirect("/activities")

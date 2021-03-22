@@ -38,3 +38,32 @@ def show(id):
     member = member_repository.select(id)
     found_activities = member_repository.activities(member)
     return render_template("members/show.html", member=member, activities=found_activities)
+
+@members_blueprint.route("/members/<id>/edit")
+def edit_member(id):
+    member = member_repository.select(id)
+    return render_template("/members/edit.html", member = member)
+
+@members_blueprint.route("/members/<id>", methods=["POST"])
+def update_member(id):
+    first_name = request.form["first_name"]
+    second_name = request.form["second_name"]
+    date_of_birth = request.form["date_of_birth"]
+    age = request.form["age"]
+    if request.files["photo"] == None :
+        member = member_repository.select(id)
+        photo = member.photo
+    else:
+        photo = request.files["photo"].filename
+    
+    platinum = request.form["platinum"]
+
+    member = Member(first_name, 
+                    second_name, 
+                    date_of_birth, 
+                    age, 
+                    photo, 
+                    platinum,
+                    id)
+    member_repository.update(member)
+    return redirect("/members")
