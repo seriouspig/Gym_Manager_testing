@@ -1,24 +1,23 @@
 import pdb 
 from models.member import Member 
 from models.activity import Activity
-from models.event import Event
+from models.workout import Workout
 from models.booking import Booking
 
 import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
-import repositories.event_repository as event_repository
+import repositories.workout_repository as workout_repository
 import repositories.booking_repository as booking_repository
 
 booking_repository.delete_all()
-event_repository.delete_all()
+workout_repository.delete_all()
 activity_repository.delete_all()
 member_repository.delete_all()
 
 member1 = Member(
     "John",
     "Wick",
-    "30 march 1978",
-    "42",
+    "1978-03-30",
     "john_wick.jpg",
     "Basic"
 )
@@ -27,8 +26,7 @@ member_repository.save(member1)
 member2 = Member(
     "Arnold",
     "Schwarzeneger",
-    "30 march 1945",
-    "75",
+    "1945-03-14",
     "arnold_swartzeneger.jpg",
     "Premium"
 )
