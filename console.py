@@ -2,11 +2,14 @@ import pdb
 from models.member import Member 
 from models.activity import Activity
 from models.event import Event
+from models.booking import Booking
 
 import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 import repositories.event_repository as event_repository
+import repositories.booking_repository as booking_repository
 
+booking_repository.delete_all()
 event_repository.delete_all()
 activity_repository.delete_all()
 member_repository.delete_all()
@@ -45,10 +48,10 @@ activity2 = Activity(
 )
 activity_repository.save(activity2)
 
-event1 = Event(member1, activity1, "Monday", "10 o clock", "Basement 1", "20")
-event_repository.save(event1)
+booking1 = Booking(member1, activity1)
+booking_repository.save(booking1)
 
-event2 = Event(member2, activity2, "Tuesday", "11 o clock", "Basement 2", "20")
-event_repository.save(event2)
+booking2 = Booking(member2, activity2)
+booking_repository.save(booking2)
 
 pdb.set_trace()

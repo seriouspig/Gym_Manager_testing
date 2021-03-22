@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bookings</h1>
+
+
+
+
+  {% for booking in bookings %}
+  
+  <p>Member first name:{{ booking.member.first_name }} - Member second name:{{ booking.member.second_name}} </p>
+  
+  <p>Activity name:{{ booking.activity.name }}</p>
+  
+  <p>Activity trainer:{{ booking.activity.trainer }}</p>
+
+
+  __________________________
+  
+  
+  {% endfor %}
+
+
+
+{% endblock %}

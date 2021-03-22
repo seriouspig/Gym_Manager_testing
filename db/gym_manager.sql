@@ -1,3 +1,4 @@
+DROP TABLE bookings;
 DROP TABLE events;
 DROP TABLE members;
 DROP TABLE activities;
@@ -27,5 +28,11 @@ CREATE TABLE events (
     time VARCHAR(255),
     room VARCHAR(255),
     capacity VARCHAR(255)
+);
+
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    member_id INT REFERENCES members(id) ON DELETE CASCADE,
+    activity_id INT REFERENCES activities(id) ON DELETE CASCADE
 );
 

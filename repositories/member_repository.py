@@ -64,8 +64,8 @@ def activities(member):
     values = [member.id]
     sql = """
         SELECT activities.* FROM activities
-        INNER JOIN events
-        ON activities.id = events.activity_id
+        INNER JOIN bookings
+        ON activities.id = bookings.activity_id
         WHERE member_id = %s
         """
     results = run_sql(sql, values)

@@ -1,17 +1,20 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
-
+<br>
+<a href="/activities/new">ADD NEW ACTIVITY</a>
 <h1>Actvities</h1> 
 
 <table>
     
     {% for activity in activities %}
-    
+    <a href="/activities/{{activity.id}}">
         <h3>{{activity.name}}</h3>
+        </a>
         <p>{{activity.trainer}}</p>
         <p></p><img src="static/images/{{activity.photo}}" alt="activity_photo"></p>
     
     {% endfor %} 
 </table>
+<a href="/activities/new">ADD NEW ACTIVITY</a>
 {% endblock %}
