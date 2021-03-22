@@ -1,4 +1,4 @@
-class Event:
+class Workout:
 
     def __init__(self, member, activity, day, time, room, capacity, id=None):
         self.activity = activity

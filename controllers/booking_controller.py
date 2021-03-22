@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.booking import Booking
 import repositories.booking_repository as booking_repository
-import repositories.event_repository as event_repository
+import repositories.workout_repository as workout_repository
 import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 

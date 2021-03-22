@@ -7,15 +7,13 @@ def save(member):
         first_name,
         second_name,
         date_of_birth,
-        age,
         photo,
         platinum)
-        VALUES ( %s, %s, %s, %s, %s, %s) RETURNING id"""
+        VALUES ( %s, %s, %s, %s, %s) RETURNING id"""
     values = [
         member.first_name,
         member.second_name,
         member.date_of_birth,
-        member.age,
         member.photo,
         member.platinum
         ]
@@ -32,7 +30,6 @@ def select_all():
             row['first_name'],
             row['second_name'],
             row['date_of_birth'],
-            row['age'],
             row['photo'],
             row['platinum'],
             row['id']
@@ -50,7 +47,6 @@ def select(id):
         member = Member(result['first_name'], 
                     result['second_name'],
                     result['date_of_birth'],
-                    result['age'],
                     result['photo'],
                     result['platinum'],
                     result['id'])
@@ -86,7 +82,6 @@ def update(member):
             first_name = %s,
             second_name = %s,
             date_of_birth = %s,
-            age = %s,
             photo = %s,
             platinum = %s
             WHERE id = %s"""
@@ -94,7 +89,6 @@ def update(member):
         member.first_name,
         member.second_name,
         member.date_of_birth,
-        member.age,
         member.photo,
         member.platinum,
         member.id

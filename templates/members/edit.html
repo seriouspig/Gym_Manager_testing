@@ -17,12 +17,9 @@
 <!-- label for date of birth -->
 <label for="date_of_birth">Date of Birth:</label>
 <!-- input for date of birth -->
-<input type="text" id="date_of_birth" name="date_of_birth" value="{{member.date_of_birth}}">
+<input type="date" id="date_of_birth" name="date_of_birth" 
+    value="{{member.date_of_birth}}">
 
-<!-- label for age -->
-<label for="age">Age:</label>
-<!-- input for age -->
-<input type="text" id="age" name="age" value="{{member.age}}">
 
 <!-- label for photo -->
 <label for="photo">Photo:</label>
@@ -34,7 +31,11 @@
 <!-- label for platinum -->
 <label for="platinum">Platinum:</label>
 <!-- input for platinum -->
-<input type="text" id="platinum" name="platinum" value="{{member.platinum}}">
+<select name="platinum">
+    <option value="Basic">Basic</option>
+    <option value="Platinum">Platinum</option>
+    <option value="Golden">Golden</option>
+</select>
 
 <!-- input to submit form -->
 <input type="submit" value="Update Member">

@@ -1,10 +1,10 @@
 from db.run_sql import run_sql
-from models.event import Event
+from models.workout import Workout
 import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 
-def save(event):
-    sql = """INSERT INTO events 
+def save(workout):
+    sql = """INSERT INTO workouts 
             (member_id,
             activity_id,
             day,
@@ -15,25 +15,25 @@ def save(event):
             (%s, %s, %s, %s, %s, %s)
             RETURNING id"""
     values = [
-        event.member.id,
-        event.activity.id,
-        event.day,
-        event.time,
-        event.room,
-        event.capacity]
+        workout.member.id,
+        workout.activity.id,
+        workout.day,
+        workout.time,
+        workout.room,
+        workout.capacity]
     results = run_sql(sql, values)
-    event.id = results[0]['id']
-    return event
+    workout.id = results[0]['id']
+    return workout
 
 def select_all():
-    events = []
+    workouts = []
 
-    sql = "SELECT * FROM events"
+    sql = "SELECT * FROM workouts"
     results = run_sql(sql)
     for row in results:
         member = member_repository.select(row['member_id'])
         activity = activity_repository.select(row['activity_id'])
-        event = Event(
+        workout = workout(
             member,
             activity,
             row['day'],
@@ -42,11 +42,11 @@ def select_all():
             row['capacity'],
             row['id']
         )
-        events.append(event)
-    return events
+        workouts.append(workout)
+    return workouts
 
 def delete_all():
-    sql = "DELETE FROM events"
+    sql = "DELETE FROM workouts"
     run_sql(sql)
 
 def delete(id):

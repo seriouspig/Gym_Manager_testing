@@ -66,7 +66,6 @@ def members(activity):
             row['first_name'],
             row['second_name'],
             row['date_of_birth'],
-            row['age'],
             row['photo'],
             row['platinum'],
             row['id']

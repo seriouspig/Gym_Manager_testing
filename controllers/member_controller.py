@@ -1,3 +1,4 @@
+from datetime import date
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.member import Member
@@ -19,14 +20,12 @@ def create_member():
     first_name = request.form["first_name"]
     second_name = request.form["second_name"]
     date_of_birth = request.form["date_of_birth"]
-    age = request.form["age"]
     photo = request.files["photo"].filename
     platinum = request.form["platinum"]
 
     member = Member(first_name, 
                     second_name, 
                     date_of_birth, 
-                    age, 
                     photo, 
                     platinum)
     member_repository.save(member)
@@ -49,7 +48,6 @@ def update_member(id):
     first_name = request.form["first_name"]
     second_name = request.form["second_name"]
     date_of_birth = request.form["date_of_birth"]
-    age = request.form["age"]
     photo = request.files["photo"].filename
 
     if photo == '' :
@@ -62,7 +60,6 @@ def update_member(id):
     member = Member(first_name, 
                     second_name, 
                     date_of_birth, 
-                    age, 
                     photo, 
                     platinum,
                     id)
