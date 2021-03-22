@@ -42,6 +42,12 @@ def edit_activity(id):
 def update_activity(id):
     name = request.form["name"]
     photo = request.files["photo"].filename
+
+    if photo == '' :
+        activity = activity_repository.select(id)
+        photo = activity.photo
+
+
     trainer = request.form["trainer"]
 
     activity = Activity(name, 
