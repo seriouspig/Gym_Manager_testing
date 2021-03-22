@@ -51,3 +51,4 @@ event_repository.save(event1)
 event2 = Event(member2, activity2, "Tuesday", "11 o clock", "Basement 2", "20")
 event_repository.save(event2)
 
+pdb.set_trace()
