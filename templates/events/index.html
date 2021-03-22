@@ -8,16 +8,17 @@
 
   {% for event in events %}
   
-  <p>{{event.member.first_name}} - {{event.member.id}} </p>
+  <p>Member fitst name:{{ event.member.first_name }} - Member second name:{{ event.member.id }} </p>
   
-  <p>{{event.activity.name}}</p>
+  <p>Activity name:{{ event.activity.name }}</p>
   
-  <p>{{event.activity.trainer}}</p>
+  <p>Activity trainer:{{ event.activity.trainer }}</p>
 
   <p>{{event.day}}</p>
   <p>{{event.time}}</p>
   <p>{{event.room}}</p>
   <p>{{event.capacity}}</p>
+  __________________________
   
   
   {% endfor %}

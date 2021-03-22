@@ -1,6 +1,6 @@
 class Event:
 
-    def __init__(self, activity, member, day, time, room, capacity, id=None):
+    def __init__(self, member, activity, day, time, room, capacity, id=None):
         self.activity = activity
         self.member = member
         self.day = day

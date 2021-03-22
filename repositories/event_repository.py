@@ -27,10 +27,9 @@ def save(event):
 
 def select_all():
     events = []
-    
+
     sql = "SELECT * FROM events"
     results = run_sql(sql)
-
     for row in results:
         member = member_repository.select(row['member_id'])
         activity = activity_repository.select(row['activity_id'])
