@@ -1,0 +1,17 @@
+body {
+    /* background: url('/static/images/background1.gif'); */
+    /* background-size: 100%;
+    background-repeat: no-repeat; */
+    background-color:darkslategray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    color: white;
+}
+
+header {
+    background-color: violet;
+    border: 0px;
+}

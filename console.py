@@ -48,10 +48,10 @@ activity_repository.save(activity2)
 
 
 
-workout1 = Workout(activity1, "Monday", "10:00", 20)
+workout1 = Workout(activity1, "Monday", "10", 20)
 workout_repository.save(workout1)
 
-workout2 = Workout(activity2, "Tuesday", "14:00", 10)
+workout2 = Workout(activity2, "Tuesday", "14", 10)
 workout_repository.save(workout2)
 
 booking1 = Booking(member1, workout1)

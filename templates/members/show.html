@@ -24,6 +24,7 @@
     <li>
         {{workout.activity.name}}
         {{workout.day}} - {{workout.time}}
+       
     </li>
 {% endfor %}
 </ul>
@@ -31,7 +32,7 @@
 
 
 <form action="/bookings" method="POST">
-    <div>
+    <div class="hidden">
         <label for="member">Member:</label>
         <select name="member_id" id="member">
             <option value="{{member.id}}">
@@ -46,6 +47,7 @@
                 <option value="{{workout.id}}">
                     {{workout.day}}{{workout.activity.name}}
                 </option>
+                
             {% endfor %}
         </select>
     </div>
