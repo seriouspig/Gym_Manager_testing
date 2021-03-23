@@ -98,3 +98,8 @@ def update(member):
         member.id
         ]
     run_sql(sql, values)
+
+def delete(id):
+    sql = "DELETE FROM members WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
