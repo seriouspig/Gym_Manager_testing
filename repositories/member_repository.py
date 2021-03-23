@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
+from models.workout import Workout
 from models.activity import Activity
 from models.member import Member
+import repositories.activity_repository as activity_repository
 
 def save(member):
     sql = """INSERT INTO members(
@@ -56,26 +58,28 @@ def delete_all():
     sql = "DELETE FROM members"
     run_sql(sql)
 
-def activities(member):
+def workouts(member):
     values = [member.id]
     sql = """
-        SELECT activities.* FROM activities
+        SELECT workouts.* FROM workouts
         INNER JOIN bookings
-        ON activities.id = bookings.activity_id
+        ON workouts.id = bookings.workout_id
         WHERE member_id = %s
         """
     results = run_sql(sql, values)
 
-    activities = []
+    workouts = []
+    
     for row in results:
-        activity = Activity(
-            row['name'],
-            row['photo'],
-            row['trainer'],
-            row['id']
+        activity = activity_repository.select(row["activity_id"])
+        workout = Workout(
+            activity,
+            row['day'],
+            row['time'],
+            row['capacity']
         )
-        activities.append(activity)
-    return activities
+        workouts.append(workout)
+    return workouts
 
 def update(member):
     sql = """UPDATE members SET 

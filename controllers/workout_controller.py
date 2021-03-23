@@ -29,3 +29,9 @@ def create_workout():
     workout = workout(member, activity, day, time, room, capacity)
     workout_repository.save(workout)
     return redirect('/workouts')
+
+@workouts_blueprint.route("/workouts/<id>")
+def show(id):
+    found_workout = workout_repository.select(id)
+    found_members = workout_repository.members(found_workout)
+    return render_template("workouts/show.html", workout=found_workout, members=found_members)

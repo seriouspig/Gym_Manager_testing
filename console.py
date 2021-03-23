@@ -46,16 +46,18 @@ activity2 = Activity(
 )
 activity_repository.save(activity2)
 
-booking1 = Booking(member1, activity1)
-booking_repository.save(booking1)
 
-booking2 = Booking(member2, activity2)
-booking_repository.save(booking2)
 
 workout1 = Workout(activity1, "Monday", "10am", 20)
 workout_repository.save(workout1)
 
 workout2 = Workout(activity2, "Tuesday", "2pm", 10)
 workout_repository.save(workout2)
+
+booking1 = Booking(member1, workout1)
+booking_repository.save(booking1)
+
+booking2 = Booking(member2, workout2)
+booking_repository.save(booking2)
 
 pdb.set_trace()
