@@ -24,9 +24,8 @@ def create_workout():
     day = request.form['day']
     time = request.form['time']
     capacity = request.form['capacity']
-    member = member_repository.select(member_id)
     activity = activity_repository.select(activity_id)
-    workout = workout(member, activity, day, time, room, capacity)
+    workout = Workout(activity, day, time, capacity)
     workout_repository.save(workout)
     return redirect('/workouts')
 
