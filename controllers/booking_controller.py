@@ -16,15 +16,15 @@ def bookings():
 @bookings_blueprint.route("/bookings/new", methods=['GET'])
 def new_booking():
     members = member_repository.select_all()
-    activities = activity_repository.select_all()
-    return render_template("bookings/new.html", members = members, activities = activities)
+    workouts = workout_repository.select_all()
+    return render_template("bookings/new.html", members = members, workouts = workouts)
 
 @bookings_blueprint.route("/bookings", methods=['POST'])
 def create_booking():
     member_id = request.form['member_id']
-    activity_id = request.form['activity_id']
+    workout_id = request.form['workout_id']
     member = member_repository.select(member_id)
-    activity = activity_repository.select(activity_id)
-    booking = Booking(member, activity)
+    workout = workout_repository.select(workout_id)
+    booking = Booking(member, workout)
     booking_repository.save(booking)
     return redirect('/bookings')
