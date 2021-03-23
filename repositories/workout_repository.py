@@ -87,3 +87,25 @@ def members(workout):
             )
         members.append(member)
     return members
+
+def available_workouts(member):
+    values = [member.id]
+    sql = """ SELECT * FROM workouts 
+            EXCEPT 
+            SELECT workouts.* FROM workouts 
+            INNER JOIN bookings 
+            ON bookings.workout_id = workouts.id 
+            WHERE member_id = %s"""
+    results = run_sql(sql, values)
+
+    workouts= []
+    for row in results:
+        activity = activity_repository.select(row["activity_id"])
+        workout = Workout(
+        activity,
+        row['day'],
+        row['time'],
+        row['capacity']
+        )
+        workouts.append(workout)
+    return workouts

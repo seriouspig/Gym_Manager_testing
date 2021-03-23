@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.member import Member
 import repositories.member_repository as member_repository
+import repositories.workout_repository as workout_repository
+import repositories.booking_repository as booking_repository
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -32,11 +34,21 @@ def create_member():
 
     return redirect('/members')
 
-@members_blueprint.route("/members/<id>")
+@members_blueprint.route("/members/<id>", methods=["GET"])
 def show(id):
     member = member_repository.select(id)
     found_workouts = member_repository.workouts(member)
-    return render_template("members/show.html", member=member, workouts=found_workouts)
+    all_workouts = workout_repository.select_all()
+    possible_workouts = workout_repository.available_workouts(member)
+
+    # adding workout
+    # workout_id = request.form['workout_id']
+    # workout = workout_repository.select(workout_id)
+    # booking = Booking(member, workout)
+    # booking_repository.save(booking)
+
+
+    return render_template("members/show.html", member=member, workouts=found_workouts, all_workouts=all_workouts, possible_workouts=possible_workouts)
 
 @members_blueprint.route("/members/<id>/edit")
 def edit_member(id):
