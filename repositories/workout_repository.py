@@ -110,3 +110,19 @@ def available_workouts(member):
         )
         workouts.append(workout)
     return workouts
+
+def update(workout):
+    sql = """UPDATE workouts SET 
+            activity_id = %s,
+            day = %s,
+            time = %s,
+            capacity = %s
+            WHERE id = %s"""
+    values = [
+        workout.activity.id,
+        workout.day,
+        workout.time,
+        workout.capacity,
+        workout.id
+        ]
+    run_sql(sql, values)

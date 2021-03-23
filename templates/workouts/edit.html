@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>ADD WORKOUT</h1>
+
+<form action="/workouts/{{workout.id}}" method="post" enctype="multipart/form-data">
+  <label for="activity">Select activity:</label>
+    <select name="activity_id" id="activity">
+      {% for activity in activities %}
+      <option value="{{ activity.id }}">{{ activity.name}}</option>
+      {% endfor %}
+    </select>
+  
+ 
+      <label for="day">Select day:</label>
+        <select name="day" id="day" >         
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Monday">Wednesday</option>
+          <option value="Monday">Thursday</option>
+          <option value="Monday">Friday</option>
+          <option value="Monday">Saturday</option>
+          <option value="Monday">Sunday</option>
+        </select>
+      
+        <label for="time">Select time:</label>
+        <select name="time" id="time">         
+          <option value="9">9:00</option>
+          <option value="10">10:00</option>
+          <option value="11">11:00</option>
+          <option value="12">12:00</option>
+          <option value="13">13:00</option>
+          <option value="14">14:00</option>
+          <option value="15">15:00</option>
+          <option value="16">16:00</option>
+          <option value="17">17:00</option>
+          <option value="18">18:00</option>
+          <option value="19">19:00</option>
+          <option value="20">20:00</option>
+          <option value="21">21:00</option>
+
+        </select>
+      
+
+<!-- label for age -->
+<label for="capacity">Capacity:</label>
+<!-- input for age -->
+<input type="text" id="capacity" name="capacity" placeholder="Capacity">
+
+
+  <input class="btn btn--action" type='submit' value="Update Workout">
+</form>
+
+{% endblock %}

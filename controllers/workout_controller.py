@@ -34,3 +34,28 @@ def show(id):
     found_workout = workout_repository.select(id)
     found_members = workout_repository.members(found_workout)
     return render_template("workouts/show.html", workout=found_workout, members=found_members)
+
+
+@workouts_blueprint.route("/workouts/<id>/edit")
+def edit_workout(id):
+    activities = activity_repository.select_all()
+    workout = workout_repository.select(id)
+    return render_template("/workouts/edit.html", workout = workout, activities = activities)
+
+@workouts_blueprint.route("/workouts/<id>", methods=["POST"])
+def update_workout(id):
+    activity_id = request.form['activity_id']
+    day = request.form['day']
+    time = request.form['time']
+    capacity = request.form['capacity']
+
+    activity = activity_repository.select(activity_id)
+    
+
+    workout = Workout(activity, 
+                    day, 
+                    time, 
+                    capacity, 
+                    id)
+    workout_repository.update(workout)
+    return redirect("/workouts")
