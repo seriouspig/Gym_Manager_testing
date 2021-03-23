@@ -18,11 +18,12 @@
 
 
 
-<h3>Activities:</h3>
+<h3>Workouts:</h3>
 <ul>
-{% for activity in activities %}
+{% for workout in workouts %}
     <li>
-        {{activity.name}} - {{activity.trainer}}
+        {{workout.activity.name}}
+        {{workout.day}} - {{workout.time}}
     </li>
 {% endfor %}
 </ul>
