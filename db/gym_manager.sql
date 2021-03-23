@@ -21,12 +21,10 @@ CREATE TABLE activities (
 
 CREATE TABLE workouts (
     id SERIAL PRIMARY KEY,
-    member_id INT REFERENCES members(id) ON DELETE CASCADE,
     activity_id INT REFERENCES activities(id) ON DELETE CASCADE,
     day VARCHAR(255),
     time VARCHAR(255),
-    room VARCHAR(255),
-    capacity VARCHAR(255)
+    capacity INT
 );
 
 CREATE TABLE bookings (

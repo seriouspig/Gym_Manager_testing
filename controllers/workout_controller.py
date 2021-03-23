@@ -20,11 +20,9 @@ def new_workout():
 
 @workouts_blueprint.route("/workouts", methods=['POST'])
 def create_workout():
-    member_id = request.form['member_id']
     activity_id = request.form['activity_id']
     day = request.form['day']
     time = request.form['time']
-    room = request.form['room']
     capacity = request.form['capacity']
     member = member_repository.select(member_id)
     activity = activity_repository.select(activity_id)

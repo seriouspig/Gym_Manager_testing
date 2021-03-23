@@ -5,21 +5,17 @@ import repositories.activity_repository as activity_repository
 
 def save(workout):
     sql = """INSERT INTO workouts 
-            (member_id,
-            activity_id,
+            (activity_id,
             day,
             time,
-            room,
             capacity
             ) VALUES 
-            (%s, %s, %s, %s, %s, %s)
+            (%s, %s, %s, %s)
             RETURNING id"""
     values = [
-        workout.member.id,
         workout.activity.id,
         workout.day,
         workout.time,
-        workout.room,
         workout.capacity]
     results = run_sql(sql, values)
     workout.id = results[0]['id']
@@ -31,14 +27,11 @@ def select_all():
     sql = "SELECT * FROM workouts"
     results = run_sql(sql)
     for row in results:
-        member = member_repository.select(row['member_id'])
         activity = activity_repository.select(row['activity_id'])
-        workout = workout(
-            member,
+        workout = Workout(
             activity,
             row['day'],
             row['time'],
-            row['room'],
             row['capacity'],
             row['id']
         )

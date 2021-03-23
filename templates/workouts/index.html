@@ -8,16 +8,16 @@
 
   {% for workout in workouts %}
   
-  <p>Member fitst name:{{ workout.member.first_name }} - Member second name:{{ workout.member.id }} </p>
   
-  <p>Activity name:{{ workout.activity.name }}</p>
+  
+  <p>Activity type:{{ workout.activity.name }}</p>
   
   <p>Activity trainer:{{ workout.activity.trainer }}</p>
 
-  <p>{{workout.day}}</p>
-  <p>{{workout.time}}</p>
-  <p>{{workout.room}}</p>
-  <p>{{workout.capacity}}</p>
+  <p>Day: {{workout.day}}</p>
+  <p>Time: {{workout.time}}</p>
+  <p>Capacity: {{workout.capacity}}</p>
+  <h3>Attended by:</h3>
   __________________________
   
   
