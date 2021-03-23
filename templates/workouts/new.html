@@ -1,27 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add an Event</h1>
+<h1>ADD WORKOUT</h1>
 
-<form action="/events" method="post">
-  <label for="member">Select a member:</label>
-    <select name="member_id" id="member">
-      {% for member in members %}
-      <option value="{{ member.id }}">{{ member.first_name }}</option>
-      {% endfor %}
-    </select>
-  
-  <label for="activity">Select an activity:</label>
+<form action="/workouts" method="post">
+  <label for="activity">Select activity:</label>
     <select name="activity_id" id="activity">
       {% for activity in activities %}
-      <option value="{{ activity.id }}">{{ activity.name }}</option>
+      <option value="{{ activity.id }}">{{ activity.name}}</option>
       {% endfor %}
     </select>
   
-<!-- label for age -->
-<label for="day">Day:</label>
-<!-- input for age -->
-<input type="text" id="day" name="day" placeholder="Day">
+ 
+      <label for="day">Select day:</label>
+        <select name="day" id="day">         
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Monday">Wednesday</option>
+          <option value="Monday">Thursday</option>
+          <option value="Monday">Friday</option>
+          <option value="Monday">Saturday</option>
+          <option value="Monday">Sunday</option>
+        </select>
+      
+        <label for="time">Select day:</label>
+        <select name="day" id="day">         
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Monday">Wednesday</option>
+          <option value="Monday">Thursday</option>
+          <option value="Monday">Friday</option>
+          <option value="Monday">Saturday</option>
+          <option value="Monday">Sunday</option>
+        </select>
+      
+
 
 <!-- label for age -->
 <label for="time">Time:</label>
@@ -39,7 +52,7 @@
 <input type="text" id="capacity" name="capacity" placeholder="Capacity">
 
 
-  <input class="btn btn--action" type='submit' value="Event">
+  <input class="btn btn--action" type='submit' value="CREATE WORKOUT">
 </form>
 
 {% endblock %}

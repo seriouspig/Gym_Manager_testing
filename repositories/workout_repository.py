@@ -105,7 +105,8 @@ def available_workouts(member):
         activity,
         row['day'],
         row['time'],
-        row['capacity']
+        row['capacity'],
+        row['id']
         )
         workouts.append(workout)
     return workouts
