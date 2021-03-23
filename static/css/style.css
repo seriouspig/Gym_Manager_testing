@@ -4,7 +4,9 @@ body {
     background-repeat: no-repeat; */
     background-color:darkslategray;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
     font-weight: normal;
+    margin: 0;
 }
 
 h1 {
@@ -12,6 +14,72 @@ h1 {
 }
 
 header {
-    background-color: violet;
-    border: 0px;
+    background-color: rgb(16, 46, 43);
+    margin: 0px;
+    padding: 10px;
+}
+
+
+
+img {
+    max-width : 100%;
+    max-height: 100%;
+}
+
+
+.member_photo {
+    grid-area: photo;
+    background-color: rgb(29, 49, 49);
+}
+.name {
+    padding:5px;
+    grid-area:name;
+    background-color: rgb(29, 49, 49);
+}
+
+.date {
+    padding:5px;
+    grid-area:date;
+    background-color: rgb(29, 49, 49);
+}
+
+.membership {
+    padding: 5px;
+    grid-area: membership;
+    background-color: rgb(29, 49, 49);
+}
+
+.delete {
+    padding: 5px;
+    grid-area: delete;
+    background-color: rgb(29, 49, 49);
+}
+
+.grid_container {
+    display: grid;
+    width: 200px;
+    padding:10px;
+    font-size: 70%;
+
+
+    grid-template-areas: 'photo  name'
+                         'photo   date'
+                        'photo   membership'
+                        'photo   delete';
+    grid-template-columns: 1fr 1fr;
+
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+a:hover {
+    color:rgb(68, 165, 172);
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
 }
