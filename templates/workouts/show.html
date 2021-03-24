@@ -3,13 +3,22 @@
 {% block content %}
 
 
-<h3>Attended by:</h3>
-<ul>
+<h3> Attended by:</h3>
+
+<div class="gallery">
     {% for member in members %}
-    <li>{{ member.first_name }} - {{member.second_name}}</li>
+    <a href="/members/{{member.id}}">
+    <div class="workout_member_container">
+        
+        {{ member.first_name }} {{member.second_name}}
+    <div class="workout_member_photo">
+        <img src="../static/images/{{member.photo}}">
+    </div>
+    </div>
+    </a>
     {% endfor %}
+</div>
 
-</ul>
-
+<a href="/workouts">BACK</a>
 
 {% endblock %}

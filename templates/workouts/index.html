@@ -21,7 +21,7 @@
   </div>
 
 
-<div class="workout_photo"><a href="workouts/{{workout.id}}/edit"><img src="static/images/{{workout.activity.photo}}" alt="workout_photo"></a></div>
+<div class="workout_photo"><a href="workouts/{{workout.id}}"><img src="static/images/{{workout.activity.photo}}" alt="workout_photo"></a></div>
 
 
 <div class="workout_capacity">
@@ -30,9 +30,12 @@
 
 
   
-  <a href="workouts/{{workout.id}}"><p>Enrolled Members</p></a>
 
-
+<div class="workout_edit">
+  <form action="/workouts/{{ workout.id }}/edit">
+    <input class="btn btn--danger" type="submit" value="edit" />
+  </form>
+</div>
 
   <div class="workout_delete">
     <form action="/workouts/{{ workout.id }}/delete" method="POST">
@@ -40,7 +43,7 @@
     </form>
   </div>
 
-  <a href="workouts/{{workout.id}}/edit">Edit workout</a>
+
 
 </div>
   
