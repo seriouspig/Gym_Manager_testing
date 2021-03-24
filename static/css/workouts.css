@@ -16,9 +16,9 @@
     background-color: rgb(29, 49, 49);
 }
 
-.workout_time {
+.workout_capacity {
     padding:5px;
-    grid-area:day;
+    grid-area:capacity;
     background-color: rgb(29, 49, 49);
 }
 
@@ -26,7 +26,7 @@
 
 .workout_container {
     display: grid;
-    width: 150px;
+    width: 200px;
     margin:10px;
     font-size: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
