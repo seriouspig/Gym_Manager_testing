@@ -2,20 +2,22 @@
 
 {% block content %} 
 <br>
-<a href="/activities/new">ADD NEW ACTIVITY</a>
+<a href="/activities/new">+ ADD NEW ACTIVITY</a>
 <h1>Actvities</h1> 
 
 <div class="gallery">
     
     {% for activity in activities %}
-    <div class="grid_container">
-    <a href="/activities/{{activity.id}}">
-        <div class="name">{{activity.name}}</div>
+    <div class="activity_container">
+        <div class="name">
+        <a href="/activities/{{activity.id}}">
+        {{activity.name}}
         </a>
-        <p>Trainer: {{activity.trainer}}</p>
-        <div class="photo"><img src="static/images/{{activity.photo}}" alt="activity_photo"></div>
     </div>
+        <div class="trainer">with {{activity.trainer}}</div>
+        <div class="activity_photo"><img src="static/images/{{activity.photo}}" alt="activity_photo"></div>
+</div>
     {% endfor %} 
 </div>
-<a href="/activities/new">ADD NEW ACTIVITY</a>
+<a href="/activities/new">+ ADD NEW ACTIVITY</a>
 {% endblock %}

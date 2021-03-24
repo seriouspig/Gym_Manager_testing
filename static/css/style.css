@@ -59,7 +59,7 @@ img {
     display: grid;
     width: 200px;
     margin:10px;
-    font-size: 70%;
+    font-size: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 
 
@@ -84,3 +84,9 @@ a:hover {
     display: flex;
     flex-flow: row wrap;
 }
+
+.head_nav {
+    margin-right: 20px;
+
+}
+

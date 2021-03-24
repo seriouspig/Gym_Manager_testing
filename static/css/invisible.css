@@ -1,3 +1,36 @@
 .hidden {
     visibility: hidden;
 }
+
+img {
+    max-width : 100%;
+    max-height: 100%;
+}
+
+.member_photo {
+    grid-area: photo;
+    background-color: rgb(29, 49, 49);
+}
+
+.trainer {
+    padding: 5px;
+    grid-area: trainer;
+    background-color: rgb(29, 49, 49);
+
+}
+
+.activity_container {
+    display: grid;
+    width: 120px;
+    margin:10px;
+    font-size: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+
+
+    grid-template-areas: 'photo '
+                         'name'
+                         'trainer';
+                     
+    grid-template-rows: 3fr 0.3fr 0.3fr;
+
+}
