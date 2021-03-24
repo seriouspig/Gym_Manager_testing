@@ -1,27 +1,35 @@
 {% extends "base.html" %} 
 
 {% block content %} 
-<h1>New Activity Form</h1>
-<form action="/activities" method="POST" enctype="multipart/form-data">
+<h3>NEW ACTIVITY FORM:</h3>
 
+<form action="/activities" method="POST" enctype="multipart/form-data">
+    <div class="activity_edit_container">
+<div class = "activity_edit_name">
 <!-- lagel for name -->
 <label for="name">Name:</label>
 <!-- input for name -->
 <input type="text" id="name" name="name" placeholder="Name">
+</div>
 
+<div class="activity_edit_photo">
 <!-- label for photo -->
 <label for="photo">Photo:</label>
 <!-- input for photo -->
 <input type="file" id="photo" name="photo" >
+</div>
 
+<div class = "activity_edit_trainer">
 <!-- label for trainer -->
 <label for="trainer">Trainer:</label>
 <!-- input for trainer -->
 <input type="text" id="trainer" name="trainer" placeholder="Trainer">
+</div>
 
 <!-- input to submit form -->
 <input type="submit" value="Add Activity">
 </form>
-<a href="/activities">Cancel</a>
+</div>
+<a href="/activities"><h3>CANCEL</h3></a>
 
 {% endblock %}

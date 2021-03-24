@@ -1,32 +1,37 @@
 {% extends "base.html" %} 
 
 {% block content %} 
-<h1>Edit Activity</h1>
-<div class = "activity_edit_container">
+<h3>EDIT ACTIVITY</h3>
+<div class = "activity_editsmall_container">
 <form action="/activities/{{activity.id}}" method="POST" enctype="multipart/form-data">
 
+    <div class="workout_edit_activity">
 <!-- lagel for name -->
 <label for="name">Name:</label>
 <!-- input for name -->
 <input type="text" id="name" name="name" value="{{activity.name}}">
+</div>
 
+<div class=activity_edit_photo>
 <!-- label for photo -->
 <label for="photo">Photo:</label>
 <!-- input for photo -->
 <input type="file" id="photo" name="photo" value="{{activity.photo}}">
 
 <p><img src="/static/images/{{activity.photo}}" alt="activity_photo"></p>
+</div>
 
+<div class = "activity_edit_trainer">
 <!-- label for trainer -->
 <label for="trainer">Trainer:</label>
 <!-- input for trainer -->
 <input type="text" id="trainer" name="trainer" value="{{activity.trainer}}">
-
+</div>
 
 <!-- input to submit form -->
 <input type="submit" value="Update Activity">
 </form>
 </div>
-<a href="/activities">Cancel</a>
+<a href="/activities"><h3>CANCEL</h3></a>
 
 {% endblock %}

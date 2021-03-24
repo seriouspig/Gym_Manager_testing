@@ -1,34 +1,107 @@
+.me_first_name{
+    grid-area: fname;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
 
+.me_second_name{
+    grid-area: sname;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.me_dob{
+    grid-area: dob;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.me_photo{
+    grid-area: mphoto;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.me_membership{
+    grid-area: mmembership;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.me_button{
+    grid-area: mbutton;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
 
 .member_edit_container {
     display: grid;
-    width: 200px;
+    width: 300px;
     margin:20px;
+    padding:20px;
     font-size: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 
 
-    grid-template-areas: 'photo  name'
-                         'photo   date'
-                        'photo   membership'
-                        'photo   delete';
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'fname'
+                         'sname'
+                        'dob'
+                        'mphoto'
+                        'mmembership'
+                        'mbutton';
+    grid-template-columns: 1fr ;
 
+}
+
+.activity_edit_name{
+    grid-area: aname;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.activity_edit_photo{
+    grid-area: aphoto;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.activity_edit_trainer{
+    grid-area: atrainer;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
 }
 
 .activity_edit_container {
     display: grid;
-    width: 200px;
+    width: 400px;
     margin:20px;
+    padding:20px;
     font-size: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 
 
-    grid-template-areas: 'photo  name'
-                         'photo   date'
-                        'photo   membership'
-                        'photo   delete';
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'aname'
+                         'aphoto'
+                        'atrainer'
+                        'abutton';
+    grid-template-columns: 1fr ;
+
+}
+
+.activity_editsmall_container {
+    display: grid;
+    width: 350px;
+    margin:20px;
+    padding:20px;
+    font-size: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+
+
+    grid-template-areas: 'aname'
+                         'aphoto'
+                        'atrainer'
+                        'abutton';
+    grid-template-columns: 1fr ;
 
 }
 

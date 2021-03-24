@@ -1,32 +1,39 @@
 {% extends "base.html" %} 
 
 {% block content %} 
-<h1>New Member Form</h1>
+<h3>New Member Form:</h3>
+<div class = "member_edit_container">
 <form action="/members" method="POST" enctype="multipart/form-data">
 
+<div class="me_first_name">
 <!-- lagel for first_name -->
 <label for="first_name">First Name:</label>
 <!-- input for first_name -->
 <input type="text" id="first_name" name="first_name" placeholder="First Name">
+</div>
 
+<div class="me_second_name">
 <!-- label for second_name -->
 <label for="second_name">Second Name:</label>
 <!-- input for second name -->
 <input type="text" id="second_name" name="second_name" placeholder="Second Name">
+</div>
 
+<div class = "me_dob">
 <!-- label for date of birth -->
 <label for="date_of_birth">Date of Birth:</label>
 <!-- input for date of birth -->
 <input type="date" id="date_of_birth" name="date_of_birth" placeholder="Date of Birth">
+</div>
 
-
-
+<div class="me_photo">
 <!-- label for photo -->
 <label for="photo">Photo:</label>
 <!-- input for photo -->
 <input type="file" id="photo" name="photo" >
+</div>
 
-
+<div class = "me_membership">
 <!-- label for platinum -->
 <label for="platinum">Platinum:</label>
 <!-- input for platinum -->
@@ -35,11 +42,16 @@
     <option value="Platinum">Platinum</option>
     <option value="Golden">Golden</option>
 </select>
+</div>
 
+<div class = "me_button">
 <!-- input to submit form -->
 <input type="submit" value="Add Member">
+</div>
 </form>
-<a href="/members">Cancel</a>
+</div>
+
+<a href="/members"><h3>CANCEL</h3></a>
 
 
 {% endblock %}
