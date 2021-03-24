@@ -10,12 +10,12 @@
     {% for activity in activities %}
     <div class="activity_container">
         <div class="name">
-        <a href="/activities/{{activity.id}}">
+        <a href="/activities/{{activity.id}}/edit">
         {{activity.name}}
         </a>
     </div>
         <div class="trainer">with {{activity.trainer}}</div>
-        <div class="activity_photo"><img src="static/images/{{activity.photo}}" alt="activity_photo"></div>
+        <div class="activity_photo"><a href="/activities/{{activity.id}}/edit"><img src="static/images/{{activity.photo}}" alt="activity_photo"></a></div>
 </div>
     {% endfor %} 
 </div>

@@ -21,7 +21,7 @@ img {
 
 .activity_container {
     display: grid;
-    width: 120px;
+    width: 150px;
     margin:10px;
     font-size: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);

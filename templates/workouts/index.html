@@ -5,30 +5,47 @@
 <h1>Workouts</h1>
 
 
-
+<div class="gallery">
 
   {% for workout in workouts %}
+  <div class= "workout_container">
   
-  
-  
-  <a href="workouts/{{workout.id}}"><p>Activity type:{{ workout.activity.name }}</p></a>
-  
-  <p>Activity trainer:{{ workout.activity.trainer }}</p>
+  <div class="workout_name">
+  <a href="workouts/{{workout.id}}">{{ workout.activity.name }}</a>
+  </div>
+  <div class="workout_trainer">
+    with {{workout.activity.trainer}}
+  </div>
+  <div class="workout_day">
+    {{workout.day}} {{workout.time}}:00
+  </div>
 
-  <p>Day: {{workout.day}}</p>
-  <p>Time: {{workout.time}}:00</p>
-  <p>Capacity: {{workout.capacity}}</p>
-  <p>
+
+<div class="workout_photo"><a href="workouts/{{workout.id}}/edit"><img src="static/images/{{workout.activity.photo}}" alt="workout_photo"></a></div>
+
+
+<div class="workout_capacity">
+  Capacity: {{workout.capacity}}
+</div>
+
+
+  
+  <a href="workouts/{{workout.id}}"><p>Enrolled Members</p></a>
+
+
+
+  <div class="workout_delete">
     <form action="/workouts/{{ workout.id }}/delete" method="POST">
       <input class="btn btn--danger" type="submit" value="delete" />
     </form>
-  </p>
+  </div>
+
   <a href="workouts/{{workout.id}}/edit">Edit workout</a>
-  __________________________
-  
+
+</div>
   
   {% endfor %}
 
-
+</div>
 
 {% endblock %}

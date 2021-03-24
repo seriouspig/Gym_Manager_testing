@@ -1,0 +1,42 @@
+.workout_name {
+    padding:5px;
+    grid-area:name;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_trainer {
+    padding:5px;
+    grid-area:trainer;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_day {
+    padding:5px;
+    grid-area:day;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_time {
+    padding:5px;
+    grid-area:day;
+    background-color: rgb(29, 49, 49);
+}
+
+
+
+.workout_container {
+    display: grid;
+    width: 150px;
+    margin:10px;
+    font-size: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+
+
+    grid-template-areas: 'photo  name'
+                         'photo  trainer'
+                        'photo   day'
+                        'photo capacity'
+                        'photo delete';
+    grid-template-columns: 1fr 1fr;
+
+}
