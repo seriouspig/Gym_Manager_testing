@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>EDIT WORKOUT</h1>
-
+<h3>EDIT WORKOUT</h3>
+<div class="workout_edit_container">
 <form action="/workouts/{{workout.id}}" method="post" enctype="multipart/form-data">
+<div class = "workout_edit_activity">  
   <label for="activity">Select activity:</label>
     <select name="activity_id" id="activity">
       {% for activity in activities %}
       <option value="{{ activity.id }}">{{ activity.name}}</option>
       {% endfor %}
     </select>
-  
- 
+</div>  
+
+ <div class = "workout_edit_day">
       <label for="day">Select day:</label>
         <select name="day" id="day" >      
           <option value="Monday">Monday</option>
@@ -22,7 +24,9 @@
           <option value="Saturday">Saturday</option>
           <option value="Sunday">Sunday</option>
         </select>
-      
+    </div> 
+
+    <div class = "workout_edit_time">
         <label for="time">Select time:</label>
         <select name="time" id="time">         
           <option value="9">9:00</option>
@@ -38,17 +42,21 @@
           <option value="19">19:00</option>
           <option value="20">20:00</option>
           <option value="21">21:00</option>
-
         </select>
+    </div>
       
-
+<div class="workout_edit_capacity">
 <!-- label for age -->
 <label for="capacity">Capacity:</label>
 <!-- input for age -->
 <input type="text" id="capacity" name="capacity" value="{{workout.capacity}}">
+</div>
 
-
+<div class="workout_edit_button">
   <input class="btn btn--action" type='submit' value="Update Workout">
+</div>
 </form>
+</div>
 
+<a href="/workouts"><h3>CANCEL</h3></a
 {% endblock %}

@@ -1,0 +1,83 @@
+
+
+.member_edit_container {
+    display: grid;
+    width: 200px;
+    margin:20px;
+    font-size: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+
+
+    grid-template-areas: 'photo  name'
+                         'photo   date'
+                        'photo   membership'
+                        'photo   delete';
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.activity_edit_container {
+    display: grid;
+    width: 200px;
+    margin:20px;
+    font-size: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+
+
+    grid-template-areas: 'photo  name'
+                         'photo   date'
+                        'photo   membership'
+                        'photo   delete';
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.workout_edit_activity{
+    padding:5px;
+    grid-area: activity;
+    background-color: rgb(29, 49, 49);
+    
+}
+
+.workout_edit_day{
+    grid-area: day;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_edit_time{
+    grid-area: time;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_edit_capacity{
+    grid-area: capacity;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_edit_button{
+    grid-area: button;
+    padding:5px;
+    background-color: rgb(29, 49, 49);
+}
+
+.workout_edit_container {
+    display: grid;
+    width: 400px;
+    margin:20px;
+    padding:20px;
+    font-size: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    justify-content: stretch;
+
+
+    grid-template-areas: 'activity'
+                         'day'
+                        'time'
+                        'capacity'
+                        'button';
+    grid-template-rows: 1fr ;
+
+}

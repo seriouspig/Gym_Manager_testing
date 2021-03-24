@@ -1,13 +1,16 @@
 {% extends "base.html" %} 
 
 {% block content %} 
-<h1>Edit Member Details</h1>
+<h3>Edit Member Details</h3>
+<div class = "member_edit_container">
 <form action="/members/{{member.id}}" method="POST" enctype="multipart/form-data">
 
+<div class="first_name">
 <!-- lagel for first_name -->
 <label for="first_name">First Name:</label>
 <!-- input for first_name -->
 <input type="text" id="first_name" name="first_name" value="{{member.first_name}}">
+</div>
 
 <!-- label for second_name -->
 <label for="second_name">Second Name:</label>
@@ -22,24 +25,32 @@
 
 
 <!-- label for photo -->
-<label for="photo">Photo:</label>
+<label for="photo">Change Photo:</label>
 <!-- input for photo -->
 <input type="file" id="photo" name="photo" >
-<p><img src="/static/images/{{member.photo}}" alt="member_photo"></p>
+<div class = "member_photo"><img src="/static/images/{{member.photo}}" alt="member_photo"></div>
 
 
 <!-- label for platinum -->
-<label for="platinum">Platinum:</label>
+<label for="platinum">Membership:</label>
 <!-- input for platinum -->
-<select name="platinum">
+<select id="platinum" name="platinum">
+
+    
     <option value="Basic">Basic</option>
     <option value="Platinum">Platinum</option>
     <option value="Golden">Golden</option>
+
+
+
 </select>
+
+</div>
 
 <!-- input to submit form -->
 <input type="submit" value="Update Member">
 </form>
+
 <a href="/members">Cancel</a>
 
 {% endblock %}

@@ -2,6 +2,7 @@
 
 {% block content %} 
 <h1>Edit Activity</h1>
+<div class = "activity_edit_container">
 <form action="/activities/{{activity.id}}" method="POST" enctype="multipart/form-data">
 
 <!-- lagel for name -->
@@ -21,9 +22,11 @@
 <!-- input for trainer -->
 <input type="text" id="trainer" name="trainer" value="{{activity.trainer}}">
 
+
 <!-- input to submit form -->
 <input type="submit" value="Update Activity">
 </form>
+</div>
 <a href="/activities">Cancel</a>
 
 {% endblock %}
