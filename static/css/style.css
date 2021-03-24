@@ -58,8 +58,9 @@ img {
 .grid_container {
     display: grid;
     width: 200px;
-    padding:10px;
+    margin:10px;
     font-size: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 
 
     grid-template-areas: 'photo  name'

@@ -5,16 +5,17 @@
 <a href="/activities/new">ADD NEW ACTIVITY</a>
 <h1>Actvities</h1> 
 
-<table>
+<div class="gallery">
     
     {% for activity in activities %}
+    <div class="grid_container">
     <a href="/activities/{{activity.id}}">
-        <h3>{{activity.name}}</h3>
+        <div class="name">{{activity.name}}</div>
         </a>
-        <p>{{activity.trainer}}</p>
-        <p></p><img src="static/images/{{activity.photo}}" alt="activity_photo"></p>
-    
+        <p>Trainer: {{activity.trainer}}</p>
+        <div class="photo"><img src="static/images/{{activity.photo}}" alt="activity_photo"></div>
+    </div>
     {% endfor %} 
-</table>
+</div>
 <a href="/activities/new">ADD NEW ACTIVITY</a>
 {% endblock %}
